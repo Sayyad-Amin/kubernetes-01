@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-deployment
+  labels:
+    app: canary-app
+    env: main
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: canary-app
+      env: main
+  template:
+    metadata:
+      name: main-pod
+      labels:
+        app: canary-app
+        env: main
+    spec:
+      containers:
+      - name: alpha
+        image: linuxacademycontent/ckad-nginx:1.0.0
+        ports:
+        - containerPort: 80

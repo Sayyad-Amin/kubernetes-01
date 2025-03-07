@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dice-job
+spec:
+  completions: 5
+  parallelism: 3
+  template:
+    spec:
+      containers:
+      - name: dice-roller
+        image: kodekloud/throw-dice
+      restartPolicy: Never
+  backoffLimit: 30

@@ -2,6 +2,7 @@
 kubectl get pods || k get po # These both behave the same and used to check pods in default namespace
 kubectl get nodes
 kubectl get namespace || kubectl get ns
+kubectl get replicationcontroller || kubectl get rc
 kubectl get replicaset || kubectl get rs
 kubectl get deployment || kubectl get deploy
 kubectl get configmap || kubectl get cm

@@ -1,0 +1,13 @@
+# Service is used to Expose an application running in your cluster behind a single outward-facing endpoint.
+
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  selector:
+    app: nginx
+  ports:
+  - port: 80
+    targetPort: 80
+  

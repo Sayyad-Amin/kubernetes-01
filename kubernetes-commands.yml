@@ -1,0 +1,2 @@
+# Kubernetes coomands 
+ kubectl get pods || k get po # These both behave the same

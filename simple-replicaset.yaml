@@ -1,0 +1,24 @@
+# Replicaset is advanced than replication-controller and used in deployment.
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myreplicaset
+  labels:
+    app: myapp
+    tier: development
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: myapp
+      tier: development
+  template:
+    metadata:
+      labels:
+        app: myapp
+        tier: development
+    spec:
+      containers:
+        - name: genz
+          image: nginx:stable

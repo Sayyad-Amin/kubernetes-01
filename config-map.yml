@@ -1,0 +1,29 @@
+# simple config-map.yml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webapp-config-map
+data:
+  APP_COLOR: darkblue
+  APP_OTHER: disregard
+
+# sample.yml for the reflection of config-map
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: webapp-color
+  name: webapp-color
+  namespace: default
+spec:
+  containers:
+  - env:
+    - name: APP_COLOR
+      valueFrom:
+       configMapKeyRef:
+         name: webapp-config-map
+         key: APP_COLOR
+    image: kodekloud/webapp-color
+    name: webapp-color

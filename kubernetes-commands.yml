@@ -7,4 +7,5 @@ kubectl get replicaset || kubectl get rs
 kubectl get deployment || kubectl get deploy
 kubectl get configmap || kubectl get cm
 kubectl get secret || k get secret
+kubectl apply -f sample-pod.yaml
  
